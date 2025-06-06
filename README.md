@@ -37,31 +37,6 @@ src/
 └── main.jsx           # Entry point
 ```
 
-## 🛠️ Installazione e Sviluppo
-
-```bash
-# Installa le dipendenze
-npm install
-
-# Avvia il server di sviluppo
-npm run dev
-
-# Build per produzione
-npm run build
-
-# Preview build di produzione
-npm run preview
-```
-
-## 🎨 Personalizzazione
-
-Il sito è completamente personalizzabile:
-
-1. **Colori e tema**: Modifica le classi Tailwind in base al tuo brand
-2. **Contenuti team**: Aggiorna le informazioni in `src/pages/About.jsx`
-3. **Progetti**: Aggiungi i tuoi progetti in `src/pages/Projects.jsx`
-4. **Contatti**: Personalizza form e info in `src/pages/Contact.jsx`
-
 ## 📧 Contatti
 
 - **Email**: threebugslater3@gmail.com
