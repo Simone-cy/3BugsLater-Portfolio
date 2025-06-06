@@ -64,7 +64,7 @@ Il sito è completamente personalizzabile:
 
 ## 📧 Contatti
 
-- **Email**: info@3bugslater.dev
+- **Email**: threebugslater3@gmail.com
 - **Website**: [3bugslater.dev](https://3bugslater.dev)
 
 ---
