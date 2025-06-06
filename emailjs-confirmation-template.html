@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conferma Richiesta - 3 Bugs Later</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8fafc;
+            line-height: 1.6;
+        }
+        
+        .email-container {
+            max-width: 600px;
+            margin: 20px auto;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, {{company_color}} 0%, #10b981 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        .success-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            margin: 0 auto 20px;
+        }
+        
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 10px 20px;
+            border-radius: 25px;
+        }
+        
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 12px;
+        }
+        
+        .header-title {
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        
+        .header-subtitle {
+            opacity: 0.9;
+            font-size: 16px;
+        }
+        
+        .content {
+            padding: 40px 30px;
+        }
+        
+        .greeting {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 15px;
+        }
+        
+        .intro-text {
+            font-size: 16px;
+            color: #475569;
+            margin-bottom: 25px;
+            line-height: 1.7;
+        }
+        
+        .project-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            border: 1px solid #cbd5e1;
+            border-left: 4px solid {{company_color}};
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+        
+        .project-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 10px;
+        }
+        
+        .project-details {
+            color: #64748b;
+            font-size: 14px;
+        }
+        
+        .timeline-card {
+            background: #f0f9ff;
+            border: 1px solid #bae6fd;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+            text-align: center;
+        }
+        
+        .timeline-icon {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        
+        .timeline-text {
+            color: #1e293b;
+            font-weight: 600;
+            font-size: 16px;
+        }
+        
+        .next-steps {
+            margin: 30px 0;
+        }
+        
+        .steps-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .step-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #fefefe;
+            border-radius: 8px;
+            border: 1px solid #f1f5f9;
+        }
+        
+        .step-number {
+            width: 30px;
+            height: 30px;
+            background: {{company_color}};
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+        
+        .step-content h4 {
+            margin: 0 0 5px 0;
+            color: #1e293b;
+            font-size: 16px;
+        }
+        
+        .step-content p {
+            margin: 0;
+            color: #64748b;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        .cta-section {
+            text-align: center;
+            margin: 30px 0;
+            padding: 25px;
+            background: #f8fafc;
+            border-radius: 8px;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+            background: {{company_color}};
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.2s;
+        }
+        
+        .contact-info {
+            background: #1e293b;
+            color: white;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        .contact-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .contact-details {
+            opacity: 0.9;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .social-proof {
+            background: #f1f5f9;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 25px 0;
+            text-align: center;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        
+        .stat-item {
+            text-align: center;
+            flex: 1;
+            min-width: 100px;
+        }
+        
+        .stat-number {
+            font-size: 24px;
+            font-weight: 700;
+            color: {{company_color}};
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            font-size: 12px;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .footer {
+            background: #f8fafc;
+            padding: 25px;
+            text-align: center;
+            border-top: 1px solid #e2e8f0;
+        }
+        
+        .footer-logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #1e293b;
+            margin-bottom: 15px;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin: 15px 0;
+        }
+        
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            background: {{company_color}};
+            color: white;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+        
+        .inquiry-id {
+            background: #e2e8f0;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            color: #475569;
+            display: inline-block;
+            margin: 15px 0;
+        }
+        
+        .footer-text {
+            font-size: 12px;
+            color: #64748b;
+            margin-top: 15px;
+        }
+        
+        @media (max-width: 600px) {
+            .email-container {
+                margin: 10px;
+            }
+            
+            .header {
+                padding: 30px 20px;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+            
+            .stats {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .step-item {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <!-- Header -->
+        <div class="header">
+            <div class="success-icon">✅</div>
+            
+            <div class="logo">
+                <div class="logo-icon">3BL</div>
+                <div style="font-weight: 700;">3 Bugs Later</div>
+            </div>
+            
+            <h1 class="header-title">Richiesta Ricevuta!</h1>
+            <p class="header-subtitle">Ti risponderemo entro {{expected_response_time}}</p>
+        </div>
+        
+        <!-- Content -->
+        <div class="content">
+            <h2 class="greeting">Ciao {{to_name}}! 👋</h2>
+            
+            <p class="intro-text">
+                <strong>Grazie per aver scelto 3 Bugs Later!</strong><br>
+                Abbiamo ricevuto la tua richiesta per un progetto di tipo <strong>{{project_type}}</strong> 
+                e il nostro team la sta già esaminando con attenzione.
+            </p>
+            
+            <!-- Project Info -->
+            <div class="project-card">
+                <h3 class="project-title">📋 Il Tuo Progetto</h3>
+                <p class="project-details">
+                    <strong>Tipo:</strong> {{project_type}}<br>
+                    <strong>Riassunto:</strong> {{project_summary}}
+                </p>
+            </div>
+            
+            <!-- Timeline -->
+            <div class="timeline-card">
+                <div class="timeline-icon">⏰</div>
+                <p class="timeline-text">Ti contatteremo entro {{expected_response_time}}</p>
+            </div>
+            
+            <!-- Next Steps -->
+            <div class="next-steps">
+                <h3 class="steps-title">🚀 Cosa Succede Ora?</h3>
+                
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Analisi Dettagliata</h4>
+                        <p>Il nostro team analizzerà i tuoi requisiti e preparerà una strategia personalizzata per il tuo progetto.</p>
+                    </div>
+                </div>
+                
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Chiamata Conoscitiva</h4>
+                        <p>Organizzeremo una video call per discutere nel dettaglio le tue esigenze e rispondere a tutte le tue domande.</p>
+                    </div>
+                </div>
+                
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Proposta Personalizzata</h4>
+                        <p>Ti invieremo una proposta completa con timeline, costi dettagliati e approccio tecnico specifico.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- CTA -->
+            <div class="cta-section">
+                <p style="margin-bottom: 15px; color: #64748b;">Nel frattempo, scopri di più sui nostri progetti:</p>
+                <a href="{{website_url}}" class="btn">
+                    🌐 Visita il Nostro Portfolio
+                </a>
+            </div>
+            
+            <!-- Social Proof -->
+            <div class="social-proof">
+                <h3 style="margin: 0 0 15px 0; color: #1e293b;">💯 Perché Scegliere 3 Bugs Later</h3>
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Progetti Completati</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Clienti Soddisfatti</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">24h</div>
+                        <div class="stat-label">Tempo di Risposta</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contact Info -->
+            <div class="contact-info">
+                <h3 class="contact-title">📞 Hai Domande Urgenti?</h3>
+                <div class="contact-details">
+                    <strong>Email:</strong> threebugslater3@gmail.com<br>
+                    <strong>WhatsApp:</strong> +39 123 456 7890<br>
+                    Siamo qui per aiutarti!
+                </div>
+            </div>
+            
+            <!-- Inquiry ID -->
+            <div style="text-align: center; margin-top: 25px;">
+                <p><strong>ID Richiesta per Riferimento:</strong></p>
+                <div class="inquiry-id">{{inquiry_id}}</div>
+                <p style="color: #64748b; font-size: 12px; margin-top: 10px;">
+                    Salva questo ID per future comunicazioni
+                </p>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footer-logo">
+                <div style="width: 25px; height: 25px; background: {{company_color}}; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 10px;">3BL</div>
+                <div style="font-weight: 700; color: #1e293b;">3 Bugs Later</div>
+            </div>
+            
+            <div class="social-links">
+                <a href="{{github_url}}" class="social-link" title="GitHub">📱</a>
+                <a href="{{linkedin_url}}" class="social-link" title="LinkedIn">💼</a>
+                <a href="{{instagram_url}}" class="social-link" title="Instagram">📷</a>
+            </div>
+            
+            <p style="margin: 10px 0; color: #1e293b; font-weight: 500;">
+                Trasformiamo i bug in feature innovative
+            </p>
+            <p class="footer-text">
+                Milano, Italia • threebugslater3@gmail.com • 
+                <a href="{{website_url}}" style="color: {{company_color}};">{{website_url}}</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

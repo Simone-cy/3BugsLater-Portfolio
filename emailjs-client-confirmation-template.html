@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conferma Ricezione - 3 Bugs Later</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #1e293b;
+            background: #f8fafc;
+        }
+        
+        .email-container {
+            max-width: 650px;
+            margin: 20px auto;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 35px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="15" height="15" patternUnits="userSpaceOnUse"><circle cx="7.5" cy="7.5" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.4;
+        }
+        
+        .logo-container {
+            position: relative;
+            z-index: 2;
+            margin-bottom: 20px;
+        }
+        
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 12px 24px;
+            border-radius: 30px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        
+        .logo-text {
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+        
+        .success-icon {
+            position: relative;
+            z-index: 2;
+            width: 70px;
+            height: 70px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 32px;
+        }
+        
+        .header-title {
+            position: relative;
+            z-index: 2;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        
+        .header-subtitle {
+            position: relative;
+            z-index: 2;
+            opacity: 0.9;
+            font-size: 16px;
+        }
+        
+        .content {
+            padding: 40px 35px;
+        }
+        
+        .welcome-message {
+            background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+            border: 1px solid #a7f3d0;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .welcome-text {
+            font-size: 18px;
+            color: #065f46;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .welcome-subtext {
+            color: #047857;
+            font-size: 14px;
+        }
+        
+        .summary-card {
+            background: #ffffff;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 0;
+            margin-bottom: 30px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        .summary-header {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .summary-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .inquiry-id {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 600;
+            display: inline-block;
+            letter-spacing: 0.5px;
+        }
+        
+        .summary-content {
+            padding: 25px;
+        }
+        
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        
+        .summary-item:last-child {
+            border-bottom: none;
+        }
+        
+        .summary-label {
+            font-weight: 600;
+            color: #475569;
+            font-size: 14px;
+        }
+        
+        .summary-value {
+            color: #1e293b;
+            font-weight: 500;
+            text-align: right;
+            max-width: 60%;
+        }
+        
+        .project-type-badge {
+            background: #6366f1;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .next-steps {
+            background: #1e293b;
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+        
+        .next-steps-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .steps-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .step-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 15px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 8px;
+        }
+        
+        .step-number {
+            background: #10b981;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+        
+        .step-content {
+            flex: 1;
+        }
+        
+        .step-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+        
+        .step-description {
+            opacity: 0.8;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        .contact-section {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            margin: 25px 0;
+        }
+        
+        .contact-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 15px;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            color: #475569;
+            text-decoration: none;
+            font-weight: 500;
+            border: 1px solid #e2e8f0;
+            transition: all 0.2s;
+        }
+        
+        .contact-item:hover {
+            border-color: #6366f1;
+            color: #6366f1;
+            transform: translateY(-1px);
+        }
+        
+        .social-proof {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border: 1px solid #f59e0b;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 25px 0;
+            text-align: center;
+        }
+        
+        .social-proof-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #92400e;
+            margin-bottom: 10px;
+        }
+        
+        .social-proof-text {
+            color: #b45309;
+            font-size: 14px;
+        }
+        
+        .footer {
+            background: #f8fafc;
+            padding: 30px;
+            text-align: center;
+            border-top: 1px solid #e2e8f0;
+        }
+        
+        .footer-logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            color: #1e293b;
+        }
+        
+        .footer-logo-icon {
+            width: 32px;
+            height: 32px;
+            background: #6366f1;
+            color: white;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 12px;
+        }
+        
+        .footer-logo-text {
+            font-weight: 700;
+            font-size: 16px;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: #e2e8f0;
+            border-radius: 50%;
+            color: #64748b;
+            text-decoration: none;
+            transition: all 0.2s;
+            font-size: 18px;
+        }
+        
+        .social-link:hover {
+            background: #6366f1;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .footer-text {
+            font-size: 12px;
+            color: #64748b;
+            margin-top: 20px;
+            line-height: 1.5;
+        }
+        
+        @media (max-width: 600px) {
+            .email-container {
+                margin: 10px;
+                border-radius: 8px;
+            }
+            
+            .header {
+                padding: 25px 20px;
+            }
+            
+            .content {
+                padding: 25px 20px;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+            }
+            
+            .summary-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+            
+            .summary-value {
+                max-width: 100%;
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="header">
+            <div class="logo-container">
+                <div class="logo">
+                    <div class="logo-icon">3BL</div>
+                    <div class="logo-text">3 Bugs Later</div>
+                </div>
+            </div>
+            
+            <div class="success-icon">✅</div>
+            
+            <h1 class="header-title">Messaggio Ricevuto!</h1>
+            <p class="header-subtitle">Ti risponderemo al più presto</p>
+        </div>
+        
+        <div class="content">
+            <div class="welcome-message">
+                <p class="welcome-text">Ciao {{name}}! 👋</p>
+                <p class="welcome-subtext">
+                    Grazie per averci contattato. Abbiamo ricevuto la tua richiesta e ci metteremo al lavoro subito!
+                </p>
+            </div>
+            
+            <div class="summary-card">
+                <div class="summary-header">
+                    <h3 class="summary-title">Riepilogo della tua Richiesta</h3>
+                    <div class="inquiry-id">ID: #{{inquiry_id}}</div>
+                </div>
+                
+                <div class="summary-content">
+                    <div class="summary-item">
+                        <span class="summary-label">👤 Nome</span>
+                        <span class="summary-value">{{name}}</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">🏢 Azienda</span>
+                        <span class="summary-value">{{company}}</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">📧 Email</span>
+                        <span class="summary-value">{{email}}</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">🚀 Tipo di Progetto</span>
+                        <div class="summary-value">
+                            <span class="project-type-badge">{{project_type}}</span>
+                        </div>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">📅 Data Richiesta</span>
+                        <span class="summary-value">{{submission_date}}</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="next-steps">
+                <h3 class="next-steps-title">🎯 I Prossimi Passi</h3>
+                <ul class="steps-list">
+                    <li class="step-item">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <div class="step-title">Analisi della Richiesta</div>
+                            <div class="step-description">
+                                Il nostro team analizzerà i dettagli del tuo progetto entro 24 ore
+                            </div>
+                        </div>
+                    </li>
+                    <li class="step-item">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <div class="step-title">Preparazione della Proposta</div>
+                            <div class="step-description">
+                                Creeremo una proposta personalizzata con timeline e costi dettagliati
+                            </div>
+                        </div>
+                    </li>
+                    <li class="step-item">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <div class="step-title">Primo Contatto</div>
+                            <div class="step-description">
+                                Ti contatteremo entro 48 ore per discutere il progetto nel dettaglio
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="social-proof">
+                <h4 class="social-proof-title">⭐ Perché Scegliere 3 Bugs Later?</h4>
+                <p class="social-proof-text">
+                    Oltre 50 progetti completati con successo • Sviluppo agile e moderno • Supporto continuo post-launch
+                </p>
+            </div>
+            
+            <div class="contact-section">
+                <h3 class="contact-title">📞 Hai Domande Urgenti?</h3>
+                <div class="contact-info">
+                    <a href="mailto:info@3bugslater.com" class="contact-item">
+                        ✉️ info@3bugslater.com
+                    </a>
+                    <a href="tel:+393401234567" class="contact-item">
+                        📱 +39 340 123 4567
+                    </a>
+                </div>
+                <p style="color: #64748b; font-size: 14px; margin-top: 15px;">
+                    Siamo qui per te dal Lunedì al Venerdì, 9:00-18:00
+                </p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div class="footer-logo">
+                <div class="footer-logo-icon">3BL</div>
+                <span class="footer-logo-text">3 Bugs Later</span>
+            </div>
+            
+            <div class="social-links">
+                <a href="https://github.com/Simone-cy/3BugsLater-Portfolio" class="social-link" title="GitHub">
+                    💻
+                </a>
+                <a href="https://linkedin.com/company/3bugslater" class="social-link" title="LinkedIn">
+                    💼
+                </a>
+                <a href="https://www.instagram.com/threebugslater" class="social-link" title="Instagram">
+                    📷
+                </a>
+            </div>
+            
+            <p style="color: #1e293b; font-weight: 600; margin: 15px 0;">
+                🚀 Trasformiamo idee in soluzioni digitali innovative
+            </p>
+            
+            <p class="footer-text">
+                Hai ricevuto questa email perché hai contattato 3 Bugs Later attraverso il nostro sito web.<br>
+                Se non hai effettuato questa richiesta, puoi ignorare questa email in sicurezza.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
