@@ -5,11 +5,11 @@ function About() {
     {
       name: "Simone Ruggiero",
       role: "Full Stack Developer & Team Lead",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
+      image: "https://i.imgur.com/ozQvqrM.jpeg",
       bio: "Esperto in React, Node.js e architetture cloud. Appassionato di clean code e best practices.",
       skills: ["React", "Node.js", "AWS", "TypeScript", "Docker"],
-      linkedin: "#",
-      github: "#",
+      linkedin: "https://www.linkedin.com/in/simone-ruggiero-5911a934b/",
+      github: "https://github.com/Simone-cy",
       email: "ruggierosimone05@gmail.com"
     },
     {
