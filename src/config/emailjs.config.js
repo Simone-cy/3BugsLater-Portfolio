@@ -1,10 +1,3 @@
-/** 
- * Questo file contiene le costanti di configurazione per EmailJS
- * Sostituire i valori con quelli ottenuti dal tuo account EmailJS:
- * 1. SERVICE_ID: ID del servizio creato su EmailJS
- * 2. USER_ID (Public Key): visibile nella dashboard di EmailJS
- * 3. TEMPLATE_IDS: ID dei template creati su EmailJS
- */
 
 export const SERVICE_ID = "3bugslater_gmail"; 
 
