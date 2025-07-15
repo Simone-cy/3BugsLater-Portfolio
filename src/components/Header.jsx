@@ -10,7 +10,6 @@ function Header() {
   const navItems = [
     { path: '/', label: 'Home' },
     { path: '/about', label: 'Chi Siamo' },
-    { path: '/projects', label: 'Portfolio' },
     { path: '/contact', label: 'Contatti' }
   ]
 

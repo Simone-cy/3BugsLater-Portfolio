@@ -6,18 +6,18 @@ function About() {
       name: "Simone Ruggiero",
       role: "Full Stack Developer & Team Lead",
       image: "https://i.imgur.com/ozQvqrM.jpeg",
-      bio: "Esperto in React, Node.js e architetture cloud. Appassionato di clean code e best practices.",
-      skills: ["React", "Node.js", "AWS", "TypeScript", "Docker"],
+      bio: "Team Lead esperto in React e Node.js. Appassionato di architetture scalabili e tecnologie moderne come Flutter.",
+      skills: ["React", "Node.js", "Tailwind CSS", "JavsScript","C", "Flutter", "Dart", "PHP", "Mysql","Python", "PostgreSQL", "C++"],
       linkedin: "https://www.linkedin.com/in/simone-ruggiero-5911a934b/",
       github: "https://github.com/Simone-cy",
       email: "ruggierosimone05@gmail.com"
     },
     {
-      name: "Diego x",
-      role: "Frontend Developer & UI/UX Designer",
+      name: "Diego Zambrano",
+      role: "Full Stack Developer",
       image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8ZG9ubmF8ZW58MHx8MHx8fDA%3D",
-      bio: "Specializzato in design responsive e user experience. Crea interfacce belle e funzionali.",
-      skills: ["React", "Canva", "Figma", "Tailwind CSS", "Adobe XD"],
+      bio: "Sviluppatore versatile con esperienza in linguaggi multipli. Specializzato in sviluppo mobile e backend robusti.",
+      skills: ["React", "Node.js", "Express.js", "Tailwind CSS", "Kotlin", "Swift", "PHP", "MySQL", "Python", "JavaScript", "C", "Bash", "C#"],
       linkedin: "#",
       github: "#",
       email: "diego@3bugslater.dev"
@@ -58,7 +58,7 @@ function About() {
               </h2>
               <div className="space-y-4 text-gray-600">
                 <p>
-                  <strong>3 Bugs Later</strong> nasce nel 2023 dall'amicizia e dalla passione condivisa per lo sviluppo software. 
+                  <strong>3 Bugs Later</strong> nasce nel 2025 dall'amicizia e dalla passione condivisa per lo sviluppo software. 
                   Tre amici universitari che, dopo aver passato innumerevoli notti a debuggare codice insieme, 
                   hanno deciso di trasformare la loro passione in una realtà professionale.
                 </p>
@@ -153,42 +153,42 @@ function About() {
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="text-center">
-              <h3 className="text-lg font-semibold text-gray-900 mb-4">Frontend</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">Frontend & Web</h3>
               <div className="space-y-2">
                 <span className="block bg-blue-100 text-blue-800 py-2 px-3 rounded">React</span>
-                <span className="block bg-green-100 text-green-800 py-2 px-3 rounded">Vue.js</span>
-                <span className="block bg-purple-100 text-purple-800 py-2 px-3 rounded">Next.js</span>
                 <span className="block bg-cyan-100 text-cyan-800 py-2 px-3 rounded">Tailwind CSS</span>
+                <span className="block bg-yellow-100 text-yellow-800 py-2 px-3 rounded">JavaScript</span>
+                <span className="block bg-purple-100 text-purple-800 py-2 px-3 rounded">PHP</span>
               </div>
             </div>
 
             <div className="text-center">
-              <h3 className="text-lg font-semibold text-gray-900 mb-4">Backend</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">Backend & Database</h3>
               <div className="space-y-2">
                 <span className="block bg-green-100 text-green-800 py-2 px-3 rounded">Node.js</span>
-                <span className="block bg-yellow-100 text-yellow-800 py-2 px-3 rounded">Python</span>
                 <span className="block bg-red-100 text-red-800 py-2 px-3 rounded">Express.js</span>
-                <span className="block bg-blue-100 text-blue-800 py-2 px-3 rounded">FastAPI</span>
+                <span className="block bg-yellow-100 text-yellow-800 py-2 px-3 rounded">Python</span>
+                <span className="block bg-orange-100 text-orange-800 py-2 px-3 rounded">MySQL</span>
               </div>
             </div>
 
             <div className="text-center">
-              <h3 className="text-lg font-semibold text-gray-900 mb-4">Database</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">Mobile</h3>
               <div className="space-y-2">
-                <span className="block bg-blue-100 text-blue-800 py-2 px-3 rounded">PostgreSQL</span>
-                <span className="block bg-green-100 text-green-800 py-2 px-3 rounded">MongoDB</span>
-                <span className="block bg-red-100 text-red-800 py-2 px-3 rounded">Redis</span>
-                <span className="block bg-orange-100 text-orange-800 py-2 px-3 rounded">Supabase</span>
+                <span className="block bg-cyan-100 text-cyan-800 py-2 px-3 rounded">Flutter</span>
+                <span className="block bg-blue-100 text-blue-800 py-2 px-3 rounded">Dart</span>
+                <span className="block bg-green-100 text-green-800 py-2 px-3 rounded">Kotlin</span>
+                <span className="block bg-gray-100 text-gray-800 py-2 px-3 rounded">Swift</span>
               </div>
             </div>
 
             <div className="text-center">
-              <h3 className="text-lg font-semibold text-gray-900 mb-4">DevOps & Cloud</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">Languages & Tools</h3>
               <div className="space-y-2">
-                <span className="block bg-orange-100 text-orange-800 py-2 px-3 rounded">AWS</span>
-                <span className="block bg-blue-100 text-blue-800 py-2 px-3 rounded">Docker</span>
-                <span className="block bg-purple-100 text-purple-800 py-2 px-3 rounded">Vercel</span>
-                <span className="block bg-gray-100 text-gray-800 py-2 px-3 rounded">Nginx</span>
+                <span className="block bg-purple-100 text-purple-800 py-2 px-3 rounded">C</span>
+                <span className="block bg-red-100 text-red-800 py-2 px-3 rounded">C++</span>
+                <span className="block bg-yellow-100 text-yellow-800 py-2 px-3 rounded">C#</span>
+                <span className="block bg-gray-100 text-gray-800 py-2 px-3 rounded">Bash</span>
               </div>
             </div>
           </div>

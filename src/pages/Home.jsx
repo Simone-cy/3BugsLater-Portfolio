@@ -19,12 +19,12 @@ function Home() {
               Specializzati in sviluppo web, mobile e applicazioni desktop con le tecnologie più moderne.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
+              {/* <Link
                 to="/projects"
                 className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
               >
                 Vedi i nostri progetti
-              </Link>
+              </Link> */}
               <Link
                 to="/contact"
                 className="bg-white text-blue-600 border-2 border-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
@@ -58,12 +58,12 @@ function Home() {
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Web Development</h3>
               <p className="text-gray-600 mb-4">
-                Applicazioni web moderne e responsive utilizzando React, Next.js e tecnologie all'avanguardia
+                Applicazioni web moderne e responsive utilizzando React, Tailwind e tecnologie all'avanguardia
               </p>
               <div className="flex flex-wrap gap-2 justify-center">
                 <span className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">React</span>
                 <span className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Node.js</span>
-                <span className="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">Next.js</span>
+                <span className="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">Tailwind</span>
               </div>
             </div>
 
@@ -94,12 +94,12 @@ function Home() {
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Backend & Database</h3>
               <p className="text-gray-600 mb-4">
-                API robuste e database scalabili con Node.js, Python, PostgreSQL e soluzioni cloud
+                API robuste e database scalabili con Mysql, MongoDB, Node.js
               </p>
               <div className="flex flex-wrap gap-2 justify-center">
-                <span className="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded">Python</span>
-                <span className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">PostgreSQL</span>
-                <span className="bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded">AWS</span>
+                <span className="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded">Mysql</span>
+                <span className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">MongoDB</span>
+                <span className="bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded">Node.js</span>
               </div>
             </div>
           </div>
@@ -109,11 +109,11 @@ function Home() {
       {/* Stats Section */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
-            <div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            {/*<div>
               <div className="text-4xl font-bold text-blue-600 mb-2">2</div>
               <div className="text-gray-600">Progetti Completati</div>
-            </div>
+            </div> */}
             <div>
               <div className="text-4xl font-bold text-green-600 mb-2">3</div>
               <div className="text-gray-600">Sviluppatori Esperti</div>
