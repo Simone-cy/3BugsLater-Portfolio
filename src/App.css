@@ -1,11 +1,7 @@
-/* App.css - Custom styles */
-
-/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
 
-/* Custom animations */
 @keyframes fadeInUp {
   from {
     opacity: 0;
