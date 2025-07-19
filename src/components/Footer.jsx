@@ -73,7 +73,7 @@ function Footer() {
               </p>
               <div className="flex space-x-4 mt-4">
                 <a
-                  href="#"
+                  href="https://www.tiktok.com/@threebugslater"
                   className="text-gray-400 hover:text-white transition-colors"
                   target="_blank"
                   rel="noopener noreferrer"
