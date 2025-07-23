@@ -1,4 +1,5 @@
 import TeamMemberCard from '../components/TeamMemberCard'
+import SEO from '../components/SEO'
 
 function About() {
   const teamMembers = [
@@ -31,7 +32,15 @@ function About() {
   ]
 
   return (
-    <div className="bg-white">
+    <>
+      <SEO 
+        title="Chi Siamo - 3 Bugs Later | Team di Sviluppatori Esperti"
+        description="Scopri il team di 3 Bugs Later: Simone, Diego e Leonardo. Tre sviluppatori appassionati con competenze in React, Node.js, mobile development e molto altro."
+        keywords="team 3 bugs later, sviluppatori portfolio, simone ruggiero, diego zambrano, gabriele, full stack developer, react developer"
+        url="/about"
+        ogImage="/favicon.svg"
+      />
+      <div className="bg-white">
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-50 to-purple-50 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -191,6 +200,7 @@ function About() {
         </div>
       </section>
     </div>
+    </>
   )
 }
 

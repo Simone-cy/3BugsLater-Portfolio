@@ -1,8 +1,17 @@
 import { Link } from 'react-router-dom'
+import SEO from '../components/SEO'
 
 function Home() {
   return (
-    <div className="bg-white">
+    <>
+      <SEO 
+        title="3 Bugs Later - Team di Sviluppatori Web e Mobile | Portfolio Ufficiale"
+        description="3 Bugs Later è un team di tre sviluppatori esperti che trasforma i bug in feature. Specializzati in sviluppo web, mobile e desktop con React, JavaScript e tecnologie moderne."
+        keywords="3 bugs later, team sviluppatori, sviluppo web, sviluppo mobile, React, JavaScript, portfolio sviluppatori, soluzioni software"
+        url="/"
+        ogImage="/favicon.svg"
+      />
+      <div className="bg-white">
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-50 via-white to-purple-50 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -148,6 +157,7 @@ function Home() {
         </div>
       </section>
     </div>
+    </>
   )
 }
 

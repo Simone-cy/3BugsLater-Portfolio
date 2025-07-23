@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { sendContactEmail } from '../utils/emailService'
 import LoadingSpinner from '../components/LoadingSpinner'
+import SEO from '../components/SEO'
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -58,7 +59,15 @@ function Contact() {
   }
 
   return (
-    <div className="bg-white">
+    <>
+      <SEO 
+        title="Contattaci - 3 Bugs Later | Richiedi un Preventivo Gratuito"
+        description="Hai un progetto in mente? Contatta il team di 3 Bugs Later per un preventivo gratuito. Specializzati in sviluppo web, mobile e software personalizzato."
+        keywords="contatti 3 bugs later, preventivo sviluppo web, preventivo app mobile, richiesta preventivo, sviluppatori freelance"
+        url="/contact"
+        ogImage="/favicon.svg"
+      />
+      <div className="bg-white">
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-50 to-purple-50 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -380,6 +389,7 @@ function Contact() {
         </div>
       </section>
   </div>
+  </>
   )
 }
 

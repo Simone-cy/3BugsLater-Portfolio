@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://3bugslater.dev/sitemap.xml
+
+# Disallow access to admin or private areas (if any)
+# Disallow: /public/
+# Disallow: /src/assets/
+
+# Allow search engines to crawl CSS and JS files
+Allow: /src/
+Allow: *.css
+Allow: *.js
