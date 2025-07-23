@@ -5,9 +5,8 @@ function About() {
     {
       name: "Simone Ruggiero",
       role: "Full Stack Developer & Team Lead",
-      image: "https://i.imgur.com/ozQvqrM.jpeg",
       bio: "Team Lead esperto in React e Node.js. Appassionato di architetture scalabili e tecnologie moderne come Flutter.",
-      skills: ["React", "Node.js", "Tailwind CSS", "JavsScript","C", "Flutter", "Dart", "PHP", "Mysql","Python", "PostgreSQL", "C++", "Git"],
+      skills: ["React", "Node.js", "Tailwind CSS", "JavsScript","C", "Flutter", "Dart", "PHP", "Mysql","Python", "PostgreSQL", "C++", "Git", "Postman"],
       linkedin: "https://www.linkedin.com/in/simone-ruggiero-5911a934b/",
       github: "https://github.com/Simone-cy",
       email: "ruggierosimone05@gmail.com"
@@ -17,9 +16,8 @@ function About() {
       role: "Full Stack Developer",
       image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8ZG9ubmF8ZW58MHx8MHx8fDA%3D",
       bio: "Sviluppatore versatile con esperienza in linguaggi multipli. Specializzato in sviluppo mobile e backend robusti.",
-      skills: ["React", "Node.js", "Express.js", "Tailwind CSS", "Kotlin", "Swift", "PHP", "MySQL", "Python", "JavaScript", "C", "Bash", "C#", "Git"],
-      linkedin: "#",
-      github: "#",
+      skills: ["React", "Node.js", "Express.js", "Tailwind CSS", "Kotlin", "Swift", "PHP", "MySQL", "Python", "JavaScript", "C", "Bash", "C#", "Git", "Postman"],
+      github: "https://github.com/Dev-zakk",
       email: "diego@3bugslater.dev"
     },
     {
@@ -27,7 +25,7 @@ function About() {
       role: "Full Stack Developer",
       image: "https://i.imgur.com/hkKA5Za.jpeg",
       bio: "Full-stack developer con esperienza in web e mobile. Cura sia backend che interfacce responsive. Attento al design, al codice e al lavoro in team.",
-      skills: ["React", "Node.js", "Tailwind CSS", "PHP", "MySQL", "Python", "JavaScript", "C", "C#", "Java", "Flutter", "Dart", "Bootstrap", "Git"],
+      skills: ["React", "Node.js", "Tailwind CSS", "PHP", "MySQL", "Python", "JavaScript", "C", "C#", "Java", "Flutter", "Dart", "Bootstrap", "Git", "Postman"],
       linkedin: "#",
       github: "https://github.com/Cripsum",
       email: "galli.leonardo2005@gmail.com"
@@ -188,7 +186,7 @@ function About() {
                 <span className="block bg-purple-100 text-purple-800 py-2 px-3 rounded">C</span>
                 <span className="block bg-red-100 text-red-800 py-2 px-3 rounded">C++</span>
                 <span className="block bg-yellow-100 text-yellow-800 py-2 px-3 rounded">C#</span>
-                <span className="block bg-gray-100 text-gray-800 py-2 px-3 rounded">Bash</span>
+                <span className="block bg-gray-100 text-gray-800 py-2 px-3 rounded">Git</span>
               </div>
             </div>
           </div>
