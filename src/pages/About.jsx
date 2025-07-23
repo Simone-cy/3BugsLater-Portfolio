@@ -14,7 +14,6 @@ function About() {
     {
       name: "Diego Zambrano",
       role: "Full Stack Developer",
-      image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8ZG9ubmF8ZW58MHx8MHx8fDA%3D",
       bio: "Sviluppatore versatile con esperienza in linguaggi multipli. Specializzato in sviluppo mobile e backend robusti.",
       skills: ["React", "Node.js", "Express.js", "Tailwind CSS", "Kotlin", "Swift", "PHP", "MySQL", "Python", "JavaScript", "C", "Bash", "C#", "Git", "Postman"],
       github: "https://github.com/Dev-zakk",
@@ -23,7 +22,6 @@ function About() {
     {
       name: "Leonardo Galli",
       role: "Full Stack Developer",
-      image: "https://i.imgur.com/hkKA5Za.jpeg",
       bio: "Full-stack developer con esperienza in web e mobile. Cura sia backend che interfacce responsive. Attento al design, al codice e al lavoro in team.",
       skills: ["React", "Node.js", "Tailwind CSS", "PHP", "MySQL", "Python", "JavaScript", "C", "C#", "Java", "Flutter", "Dart", "Bootstrap", "Git", "Postman"],
       linkedin: "#",
