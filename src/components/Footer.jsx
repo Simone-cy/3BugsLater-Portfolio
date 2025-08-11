@@ -34,7 +34,7 @@ function Footer() {
               </li>
               <li>
                 <a
-                  href="/about"
+                  href="https://3bugslater.dev/about"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   Chi Siamo
