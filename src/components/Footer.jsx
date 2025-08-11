@@ -41,6 +41,14 @@ function Footer() {
                   Chi Siamo
                 </Link>
               </li>
+              {/*<li>
+                <a
+                  href="/projects"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  Portfolio
+                </a>
+              </li> */}
               <li>
                 <Link
                   to="/contact"
